@@ -57,6 +57,28 @@ h2{font-size:1.5rem;font-weight:700;margin:0 0 .75rem}
   font-size:.875rem;color:var(--ink-soft)}
 .fine{font-size:.75rem;color:var(--ink-faint);margin:0}
 .support-copy{max-width:36rem;margin:0 auto;font-size:.875rem;color:var(--ink-soft)}
+/* beta interest form */
+.form-card{max-width:34rem;margin:0 auto;text-align:left}
+.form-lede{max-width:34rem;margin:0 auto 1rem;font-size:.875rem;color:var(--ink-soft);text-align:center}
+.field{display:flex;flex-direction:column;gap:.3rem;margin-bottom:.9rem}
+.field label{font-size:.8125rem;font-weight:600;color:var(--ink)}
+.field .hint{font-weight:400;color:var(--ink-faint)}
+.field input,.field select,.field textarea{font:inherit;font-size:.9375rem;color:var(--ink);background:var(--surface);
+  border:1px solid rgba(100,116,139,.35);border-radius:var(--radius-control);padding:.6rem .7rem;width:100%}
+.field textarea{min-height:5rem;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--brand-600);outline:2px solid var(--brand-600);outline-offset:1px}
+.field-row{display:grid;gap:.9rem}
+@media(min-width:560px){.field-row{grid-template-columns:1fr 1fr}}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.btn-submit{width:100%;border:0;cursor:pointer;font:inherit;font-size:1rem}
+.btn-submit[disabled]{opacity:.6;cursor:progress}
+.form-status{margin:.75rem 0 0;font-size:.875rem;min-height:1.25rem}
+.form-status[data-state="error"]{color:var(--danger)}
+.form-status[data-state="ok"]{color:var(--success);font-weight:500}
+.form-fine{margin:.75rem 0 0;font-size:.75rem;color:var(--ink-faint)}
+.form-done{text-align:center;padding:1rem 0}
+.form-done h3{margin:0 0 .35rem;font-size:1.0625rem;color:var(--brand-700)}
+.form-done p{margin:0;font-size:.875rem;color:var(--ink-soft)}
 footer{margin-top:2.5rem;border-top:1px solid rgba(100,116,139,.12);padding:1.5rem 0 2rem;
   text-align:center;font-size:.75rem;color:var(--ink-faint)}
 footer nav{margin-bottom:.75rem;display:flex;flex-wrap:wrap;justify-content:center;column-gap:1rem;row-gap:.5rem}
