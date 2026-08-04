@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy — MyCollegeCounsel</title>
+<meta name="description" content="How MyCollegeCounsel handles student data: minimal by design, no ads, no selling data, plain-language controls.">
+<meta property="og:title" content="Privacy — MyCollegeCounsel">
+<meta property="og:description" content="How MyCollegeCounsel handles student data: minimal by design, no ads, no selling data, plain-language controls.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#4f46e5">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%20512%22%3E%0A%20%20%0A%20%20%3Crect%20x%3D%2232%22%20y%3D%2232%22%20width%3D%22448%22%20height%3D%22448%22%20rx%3D%22112%22%20fill%3D%22%234f46e5%22%2F%3E%0A%20%20%0A%20%20%3Cpath%20d%3D%22M256%20116%0A%20%20%20%20%20%20%20%20%20%20%20c%2080%200%20140%2047%20140%20112%0A%20%20%20%20%20%20%20%20%20%20%20c%200%2065%20-60%20112%20-140%20112%0A%20%20%20%20%20%20%20%20%20%20%20c%20-10%200%20-20%20-0.8%20-29%20-2.4%0A%20%20%20%20%20%20%20%20%20%20%20c%20-19%2015%20-47%2027%20-80%2030%0A%20%20%20%20%20%20%20%20%20%20%20c%20-5.5%200.5%20-8.5%20-5.5%20-4.8%20-9.5%0A%20%20%20%20%20%20%20%20%20%20%20c%2010.5%20-11.5%2021%20-27%2024%20-42.5%0A%20%20%20%20%20%20%20%20%20%20%20c%20-31%20-20.5%20-50.2%20-52%20-50.2%20-87.6%0A%20%20%20%20%20%20%20%20%20%20%20C%20116%20163%20176%20116%20256%20116%20Z%22%0A%20%20%20%20%20%20%20%20fill%3D%22%23ffffff%22%2F%3E%0A%20%20%0A%20%20%3Crect%20x%3D%22206%22%20y%3D%22230%22%20width%3D%22100%22%20height%3D%2262%22%20rx%3D%2226%22%20fill%3D%22%234338ca%22%2F%3E%0A%20%20%0A%20%20%3Cpath%20d%3D%22M256%20154%20L372%20208%20L256%20262%20L140%20208%20Z%22%20fill%3D%22%234f46e5%22%2F%3E%0A%20%20%0A%20%20%3Cpath%20d%3D%22M366%20210%20v%2052%22%20stroke%3D%22%23d97706%22%20stroke-width%3D%2212%22%20stroke-linecap%3D%22round%22%20fill%3D%22none%22%2F%3E%0A%20%20%3Ccircle%20cx%3D%22366%22%20cy%3D%22272%22%20r%3D%2212%22%20fill%3D%22%23d97706%22%2F%3E%0A%3C%2Fsvg%3E">
+<style>
+:root{
+  --brand-50:#eef2ff;--brand-100:#e0e7ff;--brand-500:#6366f1;--brand-600:#4f46e5;--brand-700:#4338ca;
+  --accent:#d97706;--canvas:#f8fafc;--surface:#ffffff;
+  --ink:#0f172a;--ink-soft:#475569;--ink-faint:#64748b;
+  --success:#15803d;--warning:#b45309;--danger:#b91c1c;
+  --radius-card:1rem;--radius-control:0.625rem;
+  --font:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{font-family:var(--font);background:var(--canvas);color:var(--ink);-webkit-text-size-adjust:100%}
+body{margin:0;line-height:1.5}
+:focus-visible{outline:2px solid var(--brand-600);outline-offset:2px}
+a{color:var(--brand-700)}
+.wrap{max-width:48rem;margin:0 auto;padding:0 1.5rem}
+.wrap-narrow{max-width:42rem;margin:0 auto;padding:0 1rem}
+main.landing{display:flex;flex-direction:column;gap:2.5rem;padding-top:3.5rem;text-align:center}
+@media(min-width:768px){main.landing{padding-top:5rem}}
+.hero{display:flex;flex-direction:column;align-items:center;gap:1rem}
+.hero .mark{width:72px;height:72px;border-radius:1rem;display:block}
+h1{font-size:2.25rem;font-weight:700;color:var(--brand-700);margin:0}
+.tagline{max-width:36rem;font-size:1.125rem;color:var(--ink-soft);margin:0}
+.attribution{font-size:.875rem;font-weight:500;color:var(--ink-faint);margin:-.5rem 0 0;letter-spacing:.01em}
+.pill{display:inline-block;background:var(--brand-50);border:1px solid var(--brand-100);color:var(--brand-700);
+  border-radius:999px;padding:.3rem .85rem;font-size:.8rem;font-weight:500}
+.cta-row{margin-top:.5rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.75rem}
+.btn{display:inline-block;border-radius:var(--radius-control);padding:.75rem 1.5rem;font-weight:500;text-decoration:none}
+.btn-primary{background:var(--brand-600);color:#fff}
+.btn-primary:hover{background:var(--brand-700)}
+.btn-secondary{border:1px solid var(--brand-600);color:var(--brand-700);background:transparent}
+.btn-secondary:hover{background:var(--brand-50)}
+.note{font-size:.75rem;color:var(--ink-faint);margin:0}
+h2{font-size:1.5rem;font-weight:700;margin:0 0 .75rem}
+.section-copy{max-width:42rem;margin:0 auto 1rem;font-size:.875rem;line-height:1.65;color:var(--ink-soft)}
+.card{background:var(--surface);border:1px solid rgba(100,116,139,.15);border-radius:var(--radius-card);
+  padding:1.25rem;box-shadow:0 1px 2px rgba(15,23,42,.04)}
+.card h3{margin:0 0 .25rem;font-size:1rem;font-weight:600}
+.card p{margin:0;font-size:.875rem;color:var(--ink-soft)}
+.grid3{display:grid;gap:1rem;text-align:left}
+@media(min-width:768px){.grid3{grid-template-columns:repeat(3,1fr)}}
+.price-card{max-width:28rem;margin:0 auto;text-align:left}
+.price{font-size:1.875rem;font-weight:700;color:var(--brand-700);margin:.5rem 0}
+.price small{font-size:.75rem;font-weight:500;color:var(--ink-faint);margin-left:.5rem;vertical-align:middle}
+.price-card ul{margin:0 0 .75rem;padding:0;list-style:none;display:flex;flex-direction:column;gap:.25rem;
+  font-size:.875rem;color:var(--ink-soft)}
+.fine{font-size:.75rem;color:var(--ink-faint);margin:0}
+.support-copy{max-width:36rem;margin:0 auto;font-size:.875rem;color:var(--ink-soft)}
+footer{margin-top:2.5rem;border-top:1px solid rgba(100,116,139,.12);padding:1.5rem 0 2rem;
+  text-align:center;font-size:.75rem;color:var(--ink-faint)}
+footer nav{margin-bottom:.75rem;display:flex;flex-wrap:wrap;justify-content:center;column-gap:1rem;row-gap:.5rem}
+footer a{color:inherit;text-decoration:underline}
+footer a:hover{color:var(--ink-soft)}
+footer p{margin:.5rem 0 0}
+/* subpages */
+main.page{padding:2.5rem 0}
+.page-title{font-size:1.5rem;font-weight:700;color:var(--ink);margin:0 0 .25rem}
+.page-lede{font-size:.875rem;color:var(--ink-soft);margin:0 0 1rem}
+.stack{display:flex;flex-direction:column;gap:1rem}
+details{border:1px solid rgba(100,116,139,.15);border-radius:.75rem;padding:.25rem .75rem;margin:0}
+details summary{min-height:2.75rem;display:flex;align-items:center;gap:.5rem;cursor:pointer;
+  padding:.5rem 0;font-size:.875rem;font-weight:500;color:var(--ink);list-style:none}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:"\25B8";color:var(--brand-600);flex:none;transition:transform .15s}
+details[open] summary::before{transform:rotate(90deg)}
+details .answer{padding:0 0 .75rem;font-size:.875rem;line-height:1.65;color:var(--ink-soft)}
+details .answer p{margin:0 0 .6rem}
+details .answer p:last-child{margin-bottom:0}
+details .answer a{color:var(--brand-700);text-decoration:underline}
+.faq-items{display:flex;flex-direction:column;gap:.25rem}
+.backline{margin-top:1rem;font-size:.875rem}
+/* legal prose (mirrors the app's article styles) */
+.prose{font-size:.875rem;line-height:1.65;color:var(--ink-soft)}
+.prose h1{font-size:1.5rem;font-weight:700;color:var(--ink);margin:0 0 .75rem}
+.prose h2{font-size:1.125rem;font-weight:600;color:var(--ink);margin:1.25rem 0 .5rem}
+.prose p{margin:0 0 .75rem}
+.prose ul{margin:0 0 .75rem;padding-left:1.25rem;list-style:disc}
+.prose li{margin-bottom:.25rem}
+.prose a{color:var(--brand-700);text-decoration:underline}
+.prose blockquote{border-left:4px solid var(--warning);padding-left:.75rem;margin:0 0 .75rem;
+  font-weight:500;color:var(--ink)}
+.prose em{color:var(--ink-faint)}
+.center-page{min-height:70vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:1rem;text-align:center;padding:2rem 1rem}
+</style>
+</head>
+<body>
+<div class="wrap-narrow">
+
+<main class="page">
+  <div class="card">
+    <article class="prose">
+<blockquote>
+<p><strong>DRAFT — requires counsel review before publication.</strong></p>
+</blockquote>
+<h1>MyCollegeCounsel Privacy Policy (plain-language draft)</h1>
+<p><em>Last updated: [DATE — set at publication]. This draft has not been published and is pending legal review.</em></p>
+<h2>Who we are</h2>
+<p>MyCollegeCounsel is a web app that guides US high-school seniors through the college application process: a step-by-step curriculum, plus tools for school lists, essays, deadlines, activities, recommenders, financial-aid preparation, and scholarships, with an AI coach that helps students think — never one that does the work for them.</p>
+<p>Many of our users are minors. We wrote this policy in plain language on purpose, because the people it protects should be able to read it.</p>
+<p>MyCollegeCounsel is published by Fawzy Educational. <em>[Counsel: confirm the exact legal entity name and address for publication — the Stripe merchant of record is registered as Fawzy Consulting.]</em></p>
+<p>Contact: <strong><a href="mailto:support@collegecounsel.app">support@collegecounsel.app</a></strong>.</p>
+<h2>The short version</h2>
+<ul>
+<li>We collect what the product needs to work, and nothing more.</li>
+<li>We <strong>never collect</strong> Social Security numbers, FSA IDs, bank or account numbers, tax data, or your family&#39;s actual financial figures. There is nowhere in MyCollegeCounsel to enter them.</li>
+<li>No ads. No selling data. No third-party ad tracking.</li>
+<li>You can export your data (JSON) or delete your account yourself, anytime, from your profile page.</li>
+</ul>
+<h2>What we collect</h2>
+<p>When you use MyCollegeCounsel, we store:</p>
+<ul>
+<li><strong>Account</strong>: your email address and a hashed (scrambled, one-way) version of your password. We cannot see the password itself.</li>
+<li><strong>Student profile</strong>: name, high school, GPA, test scores and testing plans, interests, intended majors, preferences (like location and school size), and a broad budget band you choose.</li>
+<li><strong>Your college process</strong>: your school list; applications with their requirements, platforms, and deadlines; calendar entries; essays with drafts, versions, and the AI feedback you save; activities and honors; recommenders (name, relationship, and an optional email address); financial-aid form checklists and statuses — stored only as yes/no &quot;ready&quot; flags, never the underlying information; scholarships you track; and your progress through the curriculum.</li>
+<li><strong>AI interaction metadata</strong>: for each AI coaching request we log the use case, model, token counts, response time, and outcome (for example: succeeded, refused by a guardrail, or rate-limited). The conversation content itself is <strong>not</strong> stored — only essays and notes you deliberately save are kept.</li>
+<li><strong>Analytics events</strong>: which features get used, recorded as metadata only. Analytics events never contain essay text or chat content.</li>
+</ul>
+<h2>What we deliberately do NOT collect</h2>
+<p>This is a design boundary built into the product, not fine print. MyCollegeCounsel never asks for, accepts, or stores:</p>
+<ul>
+<li>Social Security numbers</li>
+<li>FSA IDs (your federal student-aid login)</li>
+<li>Bank, brokerage, or any other account numbers</li>
+<li>Tax data or tax documents</li>
+<li>Your family&#39;s actual financial figures</li>
+</ul>
+<p>The FAFSA and CSS Profile are completed <strong>only</strong> on the official sites — StudentAid.gov and cssprofile.collegeboard.org. MyCollegeCounsel explains those forms and links you to them; nothing is ever filed or submitted by MyCollegeCounsel anywhere. Our aid checklists are checkmarks meaning &quot;I have this ready&quot; — there is no field for the information itself, and the AI coach is built to refuse this kind of information if it is pasted into a conversation.</p>
+<h2>How we use your data</h2>
+<ul>
+<li><strong>Running the product</strong>: your dashboard, school list, calendar, essay workspace, checklists, and journey progress all read the data you gave us back to you.</li>
+<li><strong>Reminders</strong>: we compute upcoming deadline notifications (30, 14, 7, 3, and 1 days before a due date) from your deadlines.</li>
+<li><strong>AI coaching</strong>: when you use the coach, the relevant text — your question, your draft, the minimal profile context the feature needs — is sent to our AI provider to generate the response. See the AI section below.</li>
+<li><strong>Keeping the service healthy</strong>: rate limiting, debugging, and understanding feature usage in aggregate so we can improve the product.</li>
+</ul>
+<p>We do not use your data for advertising, and we do not sell it. Ever.</p>
+<h2>How the AI processing works</h2>
+<p>When you use an AI coaching feature, the text you submit (and small amounts of relevant context, like the essay prompt you are working on) is sent to a third-party AI model provider to generate the coaching response, which streams back to you.</p>
+<ul>
+<li>We log <strong>metadata</strong> about each interaction: use case, model, token counts, latency, and outcome.</li>
+<li>We do <strong>not</strong> store the conversation content. What you choose to save — essay drafts, versions, notes, saved feedback — is stored as part of your work.</li>
+<li>The coach runs behind guardrails: it does not ghostwrite, predict admission chances, decide for you, estimate aid eligibility, recommend financial products, or accept your family&#39;s financial figures.</li>
+<li><em>[Counsel/engineering: name the AI provider(s) and link their data-handling terms, including retention and training commitments, before publication.]</em></li>
+</ul>
+<h2>No ads, no selling data, no ad tracking</h2>
+<p>MyCollegeCounsel shows no ads, sells no data, and includes no third-party advertising trackers. Our analytics are metadata-only and exist to make the product better, not to profile students.</p>
+<h2>Your rights and controls</h2>
+<ul>
+<li><strong>Export</strong>: download your data as a JSON file from your profile page, anytime.</li>
+<li><strong>Deletion</strong>: delete your account from your profile page. This permanently removes your account and all data attached to it. It cannot be undone.</li>
+<li><strong>Correction</strong>: almost everything in MyCollegeCounsel is directly editable by you. For anything you cannot edit yourself, email us and we will fix it.</li>
+<li><strong>Questions</strong>: email <strong><a href="mailto:support@collegecounsel.app">support@collegecounsel.app</a></strong> about any of the above, or about anything in this policy.</li>
+</ul>
+<p><em>[Counsel: map these controls to specific statutory rights (e.g., state privacy laws, FERPA-adjacent expectations) before publication.]</em></p>
+<h2>Minors, parents, and guardians</h2>
+<p>MyCollegeCounsel is built for high-school seniors, and many users are under 18. Sign-up includes a short, plain-language consent notice with a checkbox, written so a student can actually understand what they are agreeing to.</p>
+<p>If you are a parent or guardian of a MyCollegeCounsel user under 18, you may ask what information we hold about your student, request a copy, or request deletion by emailing <strong><a href="mailto:support@collegecounsel.app">support@collegecounsel.app</a></strong>. We will verify your identity and your relationship to the student before acting on a request.</p>
+<p>MyCollegeCounsel is not directed to children under 13, and we do not knowingly collect information from them. If you believe a child under 13 has created an account, contact us and we will delete it.</p>
+<h2>How long we keep data (retention)</h2>
+<p>We keep your data while your account is active so the product can work. When you delete your account, your account and its data are removed immediately from the live database (a full cascade — profile, essays, deadlines, and the rest). Where routine backups exist, deleted data ages out of them on a short, fixed schedule. <em>[Engineering/counsel: state the exact backup retention window before publication.]</em></p>
+<h2>Security, honestly</h2>
+<ul>
+<li>Passwords are stored only as one-way hashes.</li>
+<li>Traffic to MyCollegeCounsel runs over HTTPS in production.</li>
+<li>Your data is scoped to your account; other students cannot see it.</li>
+<li>Access to production systems is limited to the few people who operate the service.</li>
+</ul>
+<p>No system on the internet is perfectly secure, and we won&#39;t pretend ours is the exception. What we promise is care in how we build, minimal data by design (the less we hold, the less can go wrong), and prompt, honest notice to affected users if something ever does go wrong. <em>[Counsel: align breach-notification language with applicable law.]</em></p>
+<h2>Changes to this policy</h2>
+<p>If we change this policy, we will update it here with a new date. For meaningful changes, we will tell you in the app before or as they take effect, in plain language.</p>
+<h2>Contact</h2>
+<p><strong><a href="mailto:support@collegecounsel.app">support@collegecounsel.app</a></strong></p>
+<p>We read everything. If any part of this policy is unclear, that&#39;s a bug in the policy — tell us and we will fix the words.</p>
+
+    </article>
+    <p class="backline"><a href="/">&larr; Back to MyCollegeCounsel</a> &middot; <a href="/terms">Terms of service</a></p>
+  </div>
+</main>
+
+<footer>
+  <nav aria-label="Site">
+    <a href="/help">Help</a>
+    <a href="/privacy">Privacy</a>
+    <a href="/terms">Terms</a>
+    <a href="/refunds">Refunds &amp; cancellation</a>
+  </nav>
+  <p>Questions? <a href="mailto:support@collegecounsel.app">support@collegecounsel.app</a></p>
+  <p>&copy; 2026 MyCollegeCounsel &mdash; a Fawzy Educational Product</p>
+</footer>
+</div>
+</body>
+</html>

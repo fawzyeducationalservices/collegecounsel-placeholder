@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MyCollegeCounsel</title>
+<meta name="description" content="MyCollegeCounsel is an educational companion for high-school seniors (and their families) applying to US colleges: a step-by-step curriculum through the whole admissions cycle, planning and tracking tools built on real, verified data, and an AI coach that helps you think — never one that does the work for you.">
+<meta property="og:title" content="MyCollegeCounsel">
+<meta property="og:description" content="MyCollegeCounsel is an educational companion for high-school seniors (and their families) applying to US colleges: a step-by-step curriculum through the whole admissions cycle, planning and tracking tools built on real, verified data, and an AI coach that helps you think — never one that does the work for you.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#4f46e5">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%20512%22%3E%0A%20%20%0A%20%20%3Crect%20x%3D%2232%22%20y%3D%2232%22%20width%3D%22448%22%20height%3D%22448%22%20rx%3D%22112%22%20fill%3D%22%234f46e5%22%2F%3E%0A%20%20%0A%20%20%3Cpath%20d%3D%22M256%20116%0A%20%20%20%20%20%20%20%20%20%20%20c%2080%200%20140%2047%20140%20112%0A%20%20%20%20%20%20%20%20%20%20%20c%200%2065%20-60%20112%20-140%20112%0A%20%20%20%20%20%20%20%20%20%20%20c%20-10%200%20-20%20-0.8%20-29%20-2.4%0A%20%20%20%20%20%20%20%20%20%20%20c%20-19%2015%20-47%2027%20-80%2030%0A%20%20%20%20%20%20%20%20%20%20%20c%20-5.5%200.5%20-8.5%20-5.5%20-4.8%20-9.5%0A%20%20%20%20%20%20%20%20%20%20%20c%2010.5%20-11.5%2021%20-27%2024%20-42.5%0A%20%20%20%20%20%20%20%20%20%20%20c%20-31%20-20.5%20-50.2%20-52%20-50.2%20-87.6%0A%20%20%20%20%20%20%20%20%20%20%20C%20116%20163%20176%20116%20256%20116%20Z%22%0A%20%20%20%20%20%20%20%20fill%3D%22%23ffffff%22%2F%3E%0A%20%20%0A%20%20%3Crect%20x%3D%22206%22%20y%3D%22230%22%20width%3D%22100%22%20height%3D%2262%22%20rx%3D%2226%22%20fill%3D%22%234338ca%22%2F%3E%0A%20%20%0A%20%20%3Cpath%20d%3D%22M256%20154%20L372%20208%20L256%20262%20L140%20208%20Z%22%20fill%3D%22%234f46e5%22%2F%3E%0A%20%20%0A%20%20%3Cpath%20d%3D%22M366%20210%20v%2052%22%20stroke%3D%22%23d97706%22%20stroke-width%3D%2212%22%20stroke-linecap%3D%22round%22%20fill%3D%22none%22%2F%3E%0A%20%20%3Ccircle%20cx%3D%22366%22%20cy%3D%22272%22%20r%3D%2212%22%20fill%3D%22%23d97706%22%2F%3E%0A%3C%2Fsvg%3E">
+<style>
+:root{
+  --brand-50:#eef2ff;--brand-100:#e0e7ff;--brand-500:#6366f1;--brand-600:#4f46e5;--brand-700:#4338ca;
+  --accent:#d97706;--canvas:#f8fafc;--surface:#ffffff;
+  --ink:#0f172a;--ink-soft:#475569;--ink-faint:#64748b;
+  --success:#15803d;--warning:#b45309;--danger:#b91c1c;
+  --radius-card:1rem;--radius-control:0.625rem;
+  --font:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{font-family:var(--font);background:var(--canvas);color:var(--ink);-webkit-text-size-adjust:100%}
+body{margin:0;line-height:1.5}
+:focus-visible{outline:2px solid var(--brand-600);outline-offset:2px}
+a{color:var(--brand-700)}
+.wrap{max-width:48rem;margin:0 auto;padding:0 1.5rem}
+.wrap-narrow{max-width:42rem;margin:0 auto;padding:0 1rem}
+main.landing{display:flex;flex-direction:column;gap:2.5rem;padding-top:3.5rem;text-align:center}
+@media(min-width:768px){main.landing{padding-top:5rem}}
+.hero{display:flex;flex-direction:column;align-items:center;gap:1rem}
+.hero .mark{width:72px;height:72px;border-radius:1rem;display:block}
+h1{font-size:2.25rem;font-weight:700;color:var(--brand-700);margin:0}
+.tagline{max-width:36rem;font-size:1.125rem;color:var(--ink-soft);margin:0}
+.attribution{font-size:.875rem;font-weight:500;color:var(--ink-faint);margin:-.5rem 0 0;letter-spacing:.01em}
+.pill{display:inline-block;background:var(--brand-50);border:1px solid var(--brand-100);color:var(--brand-700);
+  border-radius:999px;padding:.3rem .85rem;font-size:.8rem;font-weight:500}
+.cta-row{margin-top:.5rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.75rem}
+.btn{display:inline-block;border-radius:var(--radius-control);padding:.75rem 1.5rem;font-weight:500;text-decoration:none}
+.btn-primary{background:var(--brand-600);color:#fff}
+.btn-primary:hover{background:var(--brand-700)}
+.btn-secondary{border:1px solid var(--brand-600);color:var(--brand-700);background:transparent}
+.btn-secondary:hover{background:var(--brand-50)}
+.note{font-size:.75rem;color:var(--ink-faint);margin:0}
+h2{font-size:1.5rem;font-weight:700;margin:0 0 .75rem}
+.section-copy{max-width:42rem;margin:0 auto 1rem;font-size:.875rem;line-height:1.65;color:var(--ink-soft)}
+.card{background:var(--surface);border:1px solid rgba(100,116,139,.15);border-radius:var(--radius-card);
+  padding:1.25rem;box-shadow:0 1px 2px rgba(15,23,42,.04)}
+.card h3{margin:0 0 .25rem;font-size:1rem;font-weight:600}
+.card p{margin:0;font-size:.875rem;color:var(--ink-soft)}
+.grid3{display:grid;gap:1rem;text-align:left}
+@media(min-width:768px){.grid3{grid-template-columns:repeat(3,1fr)}}
+.price-card{max-width:28rem;margin:0 auto;text-align:left}
+.price{font-size:1.875rem;font-weight:700;color:var(--brand-700);margin:.5rem 0}
+.price small{font-size:.75rem;font-weight:500;color:var(--ink-faint);margin-left:.5rem;vertical-align:middle}
+.price-card ul{margin:0 0 .75rem;padding:0;list-style:none;display:flex;flex-direction:column;gap:.25rem;
+  font-size:.875rem;color:var(--ink-soft)}
+.fine{font-size:.75rem;color:var(--ink-faint);margin:0}
+.support-copy{max-width:36rem;margin:0 auto;font-size:.875rem;color:var(--ink-soft)}
+footer{margin-top:2.5rem;border-top:1px solid rgba(100,116,139,.12);padding:1.5rem 0 2rem;
+  text-align:center;font-size:.75rem;color:var(--ink-faint)}
+footer nav{margin-bottom:.75rem;display:flex;flex-wrap:wrap;justify-content:center;column-gap:1rem;row-gap:.5rem}
+footer a{color:inherit;text-decoration:underline}
+footer a:hover{color:var(--ink-soft)}
+footer p{margin:.5rem 0 0}
+/* subpages */
+main.page{padding:2.5rem 0}
+.page-title{font-size:1.5rem;font-weight:700;color:var(--ink);margin:0 0 .25rem}
+.page-lede{font-size:.875rem;color:var(--ink-soft);margin:0 0 1rem}
+.stack{display:flex;flex-direction:column;gap:1rem}
+details{border:1px solid rgba(100,116,139,.15);border-radius:.75rem;padding:.25rem .75rem;margin:0}
+details summary{min-height:2.75rem;display:flex;align-items:center;gap:.5rem;cursor:pointer;
+  padding:.5rem 0;font-size:.875rem;font-weight:500;color:var(--ink);list-style:none}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:"\25B8";color:var(--brand-600);flex:none;transition:transform .15s}
+details[open] summary::before{transform:rotate(90deg)}
+details .answer{padding:0 0 .75rem;font-size:.875rem;line-height:1.65;color:var(--ink-soft)}
+details .answer p{margin:0 0 .6rem}
+details .answer p:last-child{margin-bottom:0}
+details .answer a{color:var(--brand-700);text-decoration:underline}
+.faq-items{display:flex;flex-direction:column;gap:.25rem}
+.backline{margin-top:1rem;font-size:.875rem}
+/* legal prose (mirrors the app's article styles) */
+.prose{font-size:.875rem;line-height:1.65;color:var(--ink-soft)}
+.prose h1{font-size:1.5rem;font-weight:700;color:var(--ink);margin:0 0 .75rem}
+.prose h2{font-size:1.125rem;font-weight:600;color:var(--ink);margin:1.25rem 0 .5rem}
+.prose p{margin:0 0 .75rem}
+.prose ul{margin:0 0 .75rem;padding-left:1.25rem;list-style:disc}
+.prose li{margin-bottom:.25rem}
+.prose a{color:var(--brand-700);text-decoration:underline}
+.prose blockquote{border-left:4px solid var(--warning);padding-left:.75rem;margin:0 0 .75rem;
+  font-weight:500;color:var(--ink)}
+.prose em{color:var(--ink-faint)}
+.center-page{min-height:70vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:1rem;text-align:center;padding:2rem 1rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<main class="landing">
+  <section class="hero" aria-label="MyCollegeCounsel">
+    <svg class="mark" role="img" aria-label="${PRODUCT_NAME} mark"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- MyCollegeCounsel mark — speech bubble (counsel) + mortarboard (college).
+       Tokens: brand-600 #4f46e5, brand-700 #4338ca, accent #d97706, surface #ffffff. -->
+  <rect x="32" y="32" width="448" height="448" rx="112" fill="#4f46e5"/>
+  <!-- speech bubble -->
+  <path d="M256 116
+           c 80 0 140 47 140 112
+           c 0 65 -60 112 -140 112
+           c -10 0 -20 -0.8 -29 -2.4
+           c -19 15 -47 27 -80 30
+           c -5.5 0.5 -8.5 -5.5 -4.8 -9.5
+           c 10.5 -11.5 21 -27 24 -42.5
+           c -31 -20.5 -50.2 -52 -50.2 -87.6
+           C 116 163 176 116 256 116 Z"
+        fill="#ffffff"/>
+  <!-- cap band (cup) below the board — drawn first, board covers its top -->
+  <rect x="206" y="230" width="100" height="62" rx="26" fill="#4338ca"/>
+  <!-- mortarboard: diamond -->
+  <path d="M256 154 L372 208 L256 262 L140 208 Z" fill="#4f46e5"/>
+  <!-- tassel from the right board corner, amber -->
+  <path d="M366 210 v 52" stroke="#d97706" stroke-width="12" stroke-linecap="round" fill="none"/>
+  <circle cx="366" cy="272" r="12" fill="#d97706"/>
+</svg>
+    <h1>MyCollegeCounsel</h1>
+    <p class="attribution">a Fawzy Educational Product</p>
+    <p class="tagline">Your guide through the whole college admissions journey &mdash; from discovering
+      colleges to deciding where to enroll.</p>
+    <p class="pill">Launching soon &mdash; the free fall beta is invite&#8209;only</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="mailto:support@collegecounsel.app?subject=Fall%20beta%20invite">Ask about the fall beta</a>
+      <a class="btn btn-secondary" href="/help">Read the help center</a>
+    </div>
+    <p class="note">Sign-in and account creation open here when the full site launches.</p>
+  </section>
+
+  <section aria-labelledby="what-heading" style="text-align:left">
+    <h2 id="what-heading" style="text-align:center">What MyCollegeCounsel is</h2>
+    <p class="section-copy" style="text-align:center">MyCollegeCounsel is an educational companion for high-school seniors (and their families) applying to US colleges: a step-by-step curriculum through the whole admissions cycle, planning and tracking tools built on real, verified data, and an AI coach that helps you think — never one that does the work for you.</p>
+    <div class="grid3">
+      <div class="card">
+        <h3>A guided journey</h3>
+        <p>13 modules of short, honest lessons &mdash; building your list, essays, recommendations,
+        the FAFSA, scholarships, and deciding &mdash; that adapt to where you&rsquo;re starting from.</p>
+      </div>
+      <div class="card">
+        <h3>Tools of record</h3>
+        <p>Discover 1,400+ real colleges with live federal data, track every application requirement
+        and deadline on one calendar with reminders, and browse curated scholarships across all 50 states.</p>
+      </div>
+      <div class="card">
+        <h3>Coaching with boundaries</h3>
+        <p>The AI coach brainstorms, tutors, and gives honest feedback. It never writes your essay,
+        never files a form for you, and never takes your family&rsquo;s financial numbers &mdash;
+        that&rsquo;s the whole point.</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="pricing-heading">
+    <h2 id="pricing-heading">Pricing</h2>
+    <div class="card price-card">
+      <h3>Season Pass 2026&ndash;27</h3>
+      <p class="price">$149<small>planned &mdash; final pricing announced at launch</small></p>
+      <ul>
+        <li>One-time purchase &mdash; no subscription, nothing auto-renews</li>
+        <li>Full access through the 2026&ndash;27 application season (May 31, 2027)</li>
+        <li>Every module, tool, and AI coaching feature included</li>
+      </ul>
+      <p class="fine">The fall beta is free by invite. Purchases are completed by a parent or guardian
+      (18+) on the student&rsquo;s behalf. See our <a href="/refunds">refund &amp; cancellation policy</a>.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="support-heading">
+    <h2 id="support-heading">Talk to a human</h2>
+    <p class="support-copy">Students, parents, and counselors can reach us any time at
+      <a href="mailto:support@collegecounsel.app">support@collegecounsel.app</a> &mdash; or start with the
+      <a href="/help">help center</a>.</p>
+  </section>
+</main>
+
+<footer>
+  <nav aria-label="Site">
+    <a href="/help">Help</a>
+    <a href="/privacy">Privacy</a>
+    <a href="/terms">Terms</a>
+    <a href="/refunds">Refunds &amp; cancellation</a>
+  </nav>
+  <p>Questions? <a href="mailto:support@collegecounsel.app">support@collegecounsel.app</a></p>
+  <p>&copy; 2026 MyCollegeCounsel &mdash; a Fawzy Educational Product</p>
+</footer>
+</div>
+</body>
+</html>
