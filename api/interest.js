@@ -1,5 +1,5 @@
 /**
- * POST /api/interest — beta interest form handler for the MyCollegeCounsel
+ * POST /api/interest — beta interest form handler for the MyCollegeStudio
  * placeholder site.
  *
  * Emails each submission to the owner via Resend (collegecounsel.app is a
@@ -8,7 +8,7 @@
  *
  * Required env var on the Vercel project: RESEND_API_KEY
  * Optional:  INTEREST_TO   (defaults to ahmed@collegecounsel.app)
- *            INTEREST_FROM (defaults to "MyCollegeCounsel Beta <beta@collegecounsel.app>")
+ *            INTEREST_FROM (defaults to "MyCollegeStudio Beta <beta@collegecounsel.app>")
  *
  * Data minimisation is deliberate: name, email, role, optional graduating
  * class, optional note. Nothing else is collected, stored, or logged — many
@@ -16,7 +16,7 @@
  */
 
 const TO = process.env.INTEREST_TO || "ahmed@collegecounsel.app";
-const FROM = process.env.INTEREST_FROM || "MyCollegeCounsel Beta <beta@collegecounsel.app>";
+const FROM = process.env.INTEREST_FROM || "MyCollegeStudio Beta <beta@collegecounsel.app>";
 
 const ROLES = {
   student: "Student",
@@ -88,7 +88,7 @@ function buildEmail(d) {
   const text =
     rows.map(([k, v]) => `${k}: ${v}`).join("\n") +
     (d.note ? `\n\nNote:\n${d.note}` : "") +
-    `\n\n— Sent by the beta interest form at https://collegecounsel.app`;
+    `\n\n— Sent by the beta interest form at https://mycollegestudio.com`;
 
   const html = `<div style="font-family:ui-sans-serif,system-ui,'Segoe UI',Roboto,sans-serif;color:#0f172a;line-height:1.6">
   <h2 style="margin:0 0 12px;font-size:18px;color:#4338ca">New beta interest</h2>
@@ -106,7 +106,7 @@ function buildEmail(d) {
          <blockquote style="margin:0;padding:8px 12px;border-left:3px solid #e0e7ff;color:#0f172a;font-size:14px;white-space:pre-wrap">${esc(d.note)}</blockquote>`
       : ""
   }
-  <p style="margin-top:20px;font-size:12px;color:#64748b">Reply to this email to answer ${esc(d.name)} directly.<br>Sent by the beta interest form at collegecounsel.app</p>
+  <p style="margin-top:20px;font-size:12px;color:#64748b">Reply to this email to answer ${esc(d.name)} directly.<br>Sent by the beta interest form at mycollegestudio.com</p>
 </div>`;
 
   return { text, html };
@@ -137,7 +137,7 @@ module.exports = async (req, res) => {
     console.error("interest: RESEND_API_KEY is not set on this deployment");
     return res.status(503).json({
       ok: false,
-      error: "Our signup form isn't available right now — please email support@collegecounsel.app.",
+      error: "Our signup form isn't available right now — please email support@mycollegestudio.com.",
     });
   }
 
@@ -165,14 +165,14 @@ module.exports = async (req, res) => {
       console.error("interest: resend responded", r.status, await r.text().catch(() => ""));
       return res.status(502).json({
         ok: false,
-        error: "We couldn't send that just now — please email support@collegecounsel.app.",
+        error: "We couldn't send that just now — please email support@mycollegestudio.com.",
       });
     }
   } catch (err) {
     console.error("interest: send failed", err && err.message);
     return res.status(502).json({
       ok: false,
-      error: "We couldn't send that just now — please email support@collegecounsel.app.",
+      error: "We couldn't send that just now — please email support@mycollegestudio.com.",
     });
   }
 
